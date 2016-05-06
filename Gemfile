@@ -25,6 +25,7 @@ gem 'rails_config'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'figaro'
+gem 'bootstrap-select-rails'
 
 group :development do
   gem 'better_errors'
