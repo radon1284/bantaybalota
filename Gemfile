@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
 gem 'rails', '4.1.4'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '>= 3.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -14,7 +15,7 @@ gem 'bundler'
 
 gem 'delayed_job_active_record'
 gem 'binding_of_caller'
-gem 'bootstrap-sass', '3.3.5'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-sass-extras'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise', github: 'plataformatec/devise'

@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= model_class.human_attribute_name(:precinct_number) %></th>
       <th><%= model_class.human_attribute_name(:ballot_number) %></th>
       <th><%= model_class.human_attribute_name(:vote_receipt_number) %></th>
@@ -14,14 +13,12 @@
       <th><%= model_class.human_attribute_name(:pcos_result_president) %></th>
       <th><%= model_class.human_attribute_name(:voted_vice_president) %></th>
       <th><%= model_class.human_attribute_name(:pcos_result_vice_president) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @reports.each do |report| %>
       <tr>
-        <td><%= report.id %></td>
         <td><%= report.precinct_number %></td>
         <td><%= report.ballot_number %></td>
         <td><%= report.vote_receipt_number %></td>
@@ -30,7 +27,6 @@
         <td><%= report.pcos_result_president %></td>
         <td><%= report.voted_vice_president %></td>
         <td><%= report.pcos_result_vice_president %></td>
-        <td><%=l report.created_at, format: :long %></td>
         <td>
           <%= link_to report_path(report), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>

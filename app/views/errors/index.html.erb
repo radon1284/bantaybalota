@@ -1,2 +1,41 @@
-<h1>Errors#index</h1>
-<p>Find me in app/views/errors/index.html.erb</p>
+<div class="page-header">
+  <h1><%=t '.title', :default => Report %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Precinct Number</th>
+      <th>Ballot Number</th>
+      <th>Vote Receipt Number</th>
+      <th>BEI Name</th>
+      <th>Voted President</th>
+      <th>Pcos Result President</th>
+      <th>Voted Vice President</th>
+      <th>Pcos Result Vice President</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.precinct_number %></td>
+        <td><%= report.ballot_number %></td>
+        <td><%= report.vote_receipt_number %></td>
+        <td><%= report.bei_name %></td>
+        <td><%= report.voted_president %></td>
+        <td><%= report.pcos_result_president %></td>
+        <td><%= report.voted_vice_president %></td>
+        <td><%= report.pcos_result_vice_president %></td>
+        <td>
+          <%= link_to report_path(report), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to report_path(report), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
