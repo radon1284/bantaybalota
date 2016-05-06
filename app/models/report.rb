@@ -13,4 +13,8 @@ class Report < ActiveRecord::Base
   validates :voted_vice_president, presence: true
   validates :pcos_result_vice_president, presence: true
 
+  def mypresident
+  	"#{'report.voted_president'}"
+  end
+
 end

@@ -18,6 +18,7 @@
   </thead>
   <tbody>
     <% @reports.each do |report| %>
+    <% if report.user == current_user %>
       <tr>
         <td><%= report.precinct_number %></td>
         <td><%= report.ballot_number %></td>
@@ -37,10 +38,7 @@
           <%- end -%>
         </td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_report_path,
-            :class => 'btn btn-primary' %>
