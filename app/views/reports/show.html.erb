@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @report.user %>
+</p>
+
+<p>
+  <strong>Precinct number:</strong>
+  <%= @report.precinct_number %>
+</p>
+
+<p>
+  <strong>Ballot number:</strong>
+  <%= @report.ballot_number %>
+</p>
+
+<p>
+  <strong>Vote receipt number:</strong>
+  <%= @report.vote_receipt_number %>
+</p>
+
+<p>
+  <strong>Bei name:</strong>
+  <%= @report.bei_name %>
+</p>
+
+<p>
+  <strong>Voted president:</strong>
+  <%= @report.voted_president %>
+</p>
+
+<p>
+  <strong>Pcos result president:</strong>
+  <%= @report.pcos_result_president %>
+</p>
+
+<p>
+  <strong>Voted vice president:</strong>
+  <%= @report.voted_vice_president %>
+</p>
+
+<p>
+  <strong>Pcos result vice president:</strong>
+  <%= @report.pcos_result_vice_president %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>

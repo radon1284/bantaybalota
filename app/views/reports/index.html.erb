@@ -1,0 +1,41 @@
+<h1>Listing reports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Precinct number</th>
+      <th>Ballot number</th>
+      <th>Vote receipt number</th>
+      <th>Bei name</th>
+      <th>Voted president</th>
+      <th>Pcos result president</th>
+      <th>Voted vice president</th>
+      <th>Pcos result vice president</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.user %></td>
+        <td><%= report.precinct_number %></td>
+        <td><%= report.ballot_number %></td>
+        <td><%= report.vote_receipt_number %></td>
+        <td><%= report.bei_name %></td>
+        <td><%= report.voted_president %></td>
+        <td><%= report.pcos_result_president %></td>
+        <td><%= report.voted_vice_president %></td>
+        <td><%= report.pcos_result_vice_president %></td>
+        <td><%= link_to 'Show', report %></td>
+        <td><%= link_to 'Edit', edit_report_path(report) %></td>
+        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Report', new_report_path %>
