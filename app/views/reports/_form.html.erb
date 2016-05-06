@@ -1,53 +1,58 @@
-<%= form_for(@report) do |f| %>
-  <% if @report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
-
-      <ul>
-      <% @report.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @report, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :precinct_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :precinct_number, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ballot_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ballot_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :vote_receipt_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :vote_receipt_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :bei_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :bei_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :voted_president, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :voted_president, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pcos_result_president, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :pcos_result_president, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :voted_vice_president, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :voted_vice_president, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pcos_result_vice_president, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :pcos_result_vice_president, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :precinct_number %><br>
-    <%= f.text_field :precinct_number %>
-  </div>
-  <div class="field">
-    <%= f.label :ballot_number %><br>
-    <%= f.text_field :ballot_number %>
-  </div>
-  <div class="field">
-    <%= f.label :vote_receipt_number %><br>
-    <%= f.text_field :vote_receipt_number %>
-  </div>
-  <div class="field">
-    <%= f.label :bei_name %><br>
-    <%= f.text_field :bei_name %>
-  </div>
-  <div class="field">
-    <%= f.label :voted_president %><br>
-    <%= f.number_field :voted_president %>
-  </div>
-  <div class="field">
-    <%= f.label :pcos_result_president %><br>
-    <%= f.number_field :pcos_result_president %>
-  </div>
-  <div class="field">
-    <%= f.label :voted_vice_president %><br>
-    <%= f.number_field :voted_vice_president %>
-  </div>
-  <div class="field">
-    <%= f.label :pcos_result_vice_president %><br>
-    <%= f.number_field :pcos_result_vice_president %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  reports_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

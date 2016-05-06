@@ -1,49 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Report -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Report %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @report.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:precinct_number) %></dt>
+      <dd><pre class="prettyprint"><%= @report.precinct_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:ballot_number) %></dt>
+      <dd><pre class="prettyprint"><%= @report.ballot_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:vote_receipt_number) %></dt>
+      <dd><pre class="prettyprint"><%= @report.vote_receipt_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:bei_name) %></dt>
+      <dd><pre class="prettyprint"><%= @report.bei_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:voted_president) %></dt>
+      <dd><pre class="prettyprint"><%= @report.voted_president %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pcos_result_president) %></dt>
+      <dd><pre class="prettyprint"><%= @report.pcos_result_president %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:voted_vice_president) %></dt>
+      <dd><pre class="prettyprint"><%= @report.voted_vice_president %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:pcos_result_vice_president) %></dt>
+      <dd><pre class="prettyprint"><%= @report.pcos_result_vice_president %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Precinct number:</strong>
-  <%= @report.precinct_number %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              reports_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_report_path(@report), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              report_path(@report),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Ballot number:</strong>
-  <%= @report.ballot_number %>
-</p>
-
-<p>
-  <strong>Vote receipt number:</strong>
-  <%= @report.vote_receipt_number %>
-</p>
-
-<p>
-  <strong>Bei name:</strong>
-  <%= @report.bei_name %>
-</p>
-
-<p>
-  <strong>Voted president:</strong>
-  <%= @report.voted_president %>
-</p>
-
-<p>
-  <strong>Pcos result president:</strong>
-  <%= @report.pcos_result_president %>
-</p>
-
-<p>
-  <strong>Voted vice president:</strong>
-  <%= @report.voted_vice_president %>
-</p>
-
-<p>
-  <strong>Pcos result vice president:</strong>
-  <%= @report.pcos_result_vice_president %>
-</p>
-
-<%= link_to 'Edit', edit_report_path(@report) %> |
-<%= link_to 'Back', reports_path %>
