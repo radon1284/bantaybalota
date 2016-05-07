@@ -39,26 +39,26 @@
   <div class="form-group">
     <%= f.label :voted_president, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-    <%= f.select :voted_president, Report.presidents.keys.map { |w| [w.titleize, w] }, {}, { :class => 'selectpicker' } %>
+    <%= f.select :voted_president, options_for_select(Report.presidents.map {|k, v| [k.titleize, v]}) %>
       
     </div>
   </div>
   <div class="form-group">
     <%= f.label :pcos_result_president, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-    <%= f.select :pcos_result_president, Report.presidents.keys.map { |w| [w.titleize, w] }, {}, { :class => 'selectpicker' } %>
+    <%= f.select :pcos_result_president, options_for_select(Report.presidents.map {|k, v| [k.titleize, v]}) %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :voted_vice_president, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-    <%= f.select :voted_vice_president, Report.vice_presidents.keys.map { |w| [w.titleize, w] }, {}, { :class => 'selectpicker' } %>
+    <%= f.select :voted_vice_president, options_for_select(Report.vice_presidents.map {|k, v| [k.titleize, v]}) %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :pcos_result_vice_president, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-    <%= f.select :pcos_result_vice_president, Report.vice_presidents.keys.map { |w| [w.titleize, w] }, {}, { :class => 'selectpicker' } %>
+    <%= f.select :pcos_result_vice_president, options_for_select(Report.vice_presidents.map {|k, v| [k.titleize, v]}) %>
     </div>
   </div>
 

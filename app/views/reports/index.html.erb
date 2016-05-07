@@ -24,10 +24,10 @@
         <td><%= report.ballot_number %></td>
         <td><%= report.vote_receipt_number %></td>
         <td><%= report.bei_name %></td>
-        <td><%= report.voted_president %></td>
-        <td><%= report.pcos_result_president %></td>
-        <td><%= report.voted_vice_president %></td>
-        <td><%= report.pcos_result_vice_president %></td>
+        <td><%= report.my_president %></td>
+        <td><%= report.pcos_president %></td>
+        <td><%= report.my_vice_president %></td>
+        <td><%= report.pcos_vice_president %></td>
         <td>
           <%= link_to report_path(report), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
