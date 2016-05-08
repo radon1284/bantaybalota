@@ -39,7 +39,7 @@
   <div class="form-group">
     <%= f.label :voted_president, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-    <%= f.select :voted_president, options_for_select(Report.presidents.map {|k, v| [k.titleize, v]}) %>
+    <%= f.select :voted_president, options_for_select(Report.presidents.map {|k, v| [k.titleize, v]}, { :class => 'selectpicker' }) %>
       
     </div>
   </div>

@@ -22,7 +22,7 @@ class Report < ActiveRecord::Base
   		"#{'Jejomar Binay'}"
   	elsif self.voted_president == 2
   		"#{'Miriam Defensor Santiago'}"
-  	elsif @self.voted_president == 3
+  	elsif self.voted_president == 3
   		"#{'Rodrigo Duterte'}"
   	elsif self.voted_president == 4
   		"#{'Grace Poe'}"
@@ -38,13 +38,17 @@ class Report < ActiveRecord::Base
   		"#{'Jejomar Binay'}"
   	elsif self.pcos_result_president == 2
   		"#{'Miriam Defensor Santiago'}"
-  	elsif @self.pcos_result_president == 3
+  	elsif self.pcos_result_president == 3
   		"#{'Rodrigo Duterte'}"
   	elsif self.pcos_result_president == 4
   		"#{'Grace Poe'}"
   	else
-  		"#{'Mar_Roxas'}"
+  		"#{'Mar Roxas'}"
   	end
+  end
+
+  def president
+  	"#{voted_president}"
   end
 
   def my_vice_president
@@ -54,7 +58,7 @@ class Report < ActiveRecord::Base
   		"#{'Alan Cayetano'}"
   	elsif self.voted_president == 2
   		"#{'Francis Escudero'}"
-  	elsif @self.voted_president == 3
+  	elsif self.voted_president == 3
   		"#{'Gregorio Honasan'}"
   	elsif self.voted_president == 4
   		"#{'Ferdinand Marcos Jr'}"
@@ -72,7 +76,7 @@ class Report < ActiveRecord::Base
   		"#{'Alan Cayetano'}"
   	elsif self.voted_president == 2
   		"#{'Francis Escudero'}"
-  	elsif @self.voted_president == 3
+  	elsif self.voted_president == 3
   		"#{'Gregorio Honasan'}"
   	elsif self.voted_president == 4
   		"#{'Ferdinand Marcos Jr'}"
